@@ -1,0 +1,240 @@
+version: "3"
+services:
+  sg-api:
+    container_name: sg-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - sg-network
+    volumes:
+      - .:/home/node/app
+      - node_modules:/home/node/app/node_modules
+    environment:
+      NODE_OPTIONS:
+      DISCORD_CLIENT_ID:
+      DISCORD_CLIENT_SECRET:
+      DISCORD_CALLBACK_URL:
+      STEAM_RETURN_URL:
+      STEAM_REALM:
+      STEAM_API_KEY:
+      AIRDROP_MATIC_NETWORK:
+      INFURA_API_KEY:
+    ports:
+      - "3000:3000"
+
+  sg-api-prod:
+    container_name: sg-api-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - sg-network
+    volumes:
+      - '.:/usr/src/app'
+    environment:
+      NODE_OPTIONS: --max_old_space_size=4096
+      POSTGRES_HOST:
+      POSTGRES_PORT:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DATABASE:
+      POSTGRES_SSL:
+      MODE:
+      CACHE_TTL_LONG_SEC:
+      ENABLE_CRON_JOBS:
+      ENABLE_PARSER_CRON_JOBS:
+      ENABLE_PARSER_SOLANA_CRON_JOBS:
+      DISCORD_CLIENT_ID:
+      DISCORD_CLIENT_SECRET:
+      DISCORD_CALLBACK_URL:
+      TWITTER_CLIENT_ID:
+      TWITTER_CLIENT_SECRET:
+      TWITTER_CALLBACK_URL:
+      TWITTER_MAIN_ACCOUNT:
+      STEAM_RETURN_URL:
+      STEAM_REALM:
+      STEAM_API_KEY:
+      EPIC_GAMES_CLIENT_ID:
+      EPIC_GAMES_CLIENT_SECRET:
+      EPIC_GAMES_CALLBACK_URL:
+      TWITTER_BOT_TOKEN:
+      TWITTER_BOT_API_KEY:
+      TWITTER_BOT_API_KEY_SECRET:
+      TELEGRAM_API_ID:
+      TELEGRAM_API_HASH:
+      FORTNITE_API_KEY:
+      NFT_PRIVATE_KEY:
+      NFT_STORE_API_KEY:
+      ACHIEVEMENT_CONTRACT_ADDRESS:
+      ACHIEVEMENT_CONTRACT_CHAIN:
+      ACHIEVEMENT_EVENT_TOPIC:
+      AIRDROP_MATIC_NETWORK:
+      INFURA_API_KEY:
+      SERVER_API_URL:
+    ports:
+      - 3000:3000
+
+  sg-api-stg:
+    container_name: sg-api-stg
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - sg-network
+    volumes:
+      - '.:/usr/src/app'
+    environment:
+      NODE_OPTIONS: --max_old_space_size=4096
+      POSTGRES_HOST:
+      POSTGRES_PORT:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DATABASE:
+      POSTGRES_SSL:
+      MODE:
+      CACHE_TTL_LONG_SEC:
+      ENABLE_CRON_JOBS:
+      ENABLE_PARSER_CRON_JOBS:
+      ENABLE_PARSER_SOLANA_CRON_JOBS:
+      DISCORD_CLIENT_ID:
+      DISCORD_CLIENT_SECRET:
+      DISCORD_CALLBACK_URL:
+      TWITTER_CLIENT_ID:
+      TWITTER_CLIENT_SECRET:
+      TWITTER_CALLBACK_URL:
+      TWITTER_MAIN_ACCOUNT:
+      STEAM_RETURN_URL:
+      STEAM_REALM:
+      STEAM_API_KEY:
+      EPIC_GAMES_CLIENT_ID:
+      EPIC_GAMES_CLIENT_SECRET:
+      EPIC_GAMES_CALLBACK_URL:
+      TWITTER_BOT_TOKEN:
+      TWITTER_BOT_API_KEY:
+      TWITTER_BOT_API_KEY_SECRET:
+      TELEGRAM_API_ID:
+      TELEGRAM_API_HASH:
+      FORTNITE_API_KEY:
+      NFT_PRIVATE_KEY:
+      NFT_STORE_API_KEY:
+      ACHIEVEMENT_CONTRACT_ADDRESS:
+      ACHIEVEMENT_CONTRACT_CHAIN:
+      ACHIEVEMENT_EVENT_TOPIC:
+      AIRDROP_MATIC_NETWORK:
+      INFURA_API_KEY:
+      SERVER_API_URL:
+    ports:
+      - 3000:3000
+
+  sg-parser-prod:
+    container_name: sg-parser-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - sg-network
+    volumes:
+      - '.:/usr/src/app'
+    environment:
+      NODE_OPTIONS: --max_old_space_size=6144
+      POSTGRES_HOST`:
+      POSTGRES_PORT`:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DATABASE:
+      POSTGRES_SSL:
+      MODE:
+      CACHE_TTL_LONG_SEC:
+      ENABLE_CRON_JOBS:
+      ENABLE_PARSER_CRON_JOBS:
+      ENABLE_PARSER_SOLANA_CRON_JOBS:
+      DISCORD_CLIENT_ID:
+      DISCORD_CLIENT_SECRET:
+      DISCORD_CALLBACK_URL:
+      TWITTER_CLIENT_ID:
+      TWITTER_CLIENT_SECRET:
+      TWITTER_CALLBACK_URL:
+      EPIC_GAMES_CLIENT_ID:
+      EPIC_GAMES_CLIENT_SECRET:
+      EPIC_GAMES_CALLBACK_URL:
+      TWITTER_BOT_TOKEN:
+      TWITTER_BOT_API_KEY:
+      TWITTER_BOT_API_KEY_SECRET:
+      STEAM_RETURN_URL:
+      STEAM_REALM:
+      STEAM_API_KEY:
+      TELEGRAM_API_ID:
+      TELEGRAM_API_HASH:
+      FORTNITE_API_KEY:
+      NFT_PRIVATE_KEY:
+      NFT_STORE_API_KEY:
+      AIRDROP_MATIC_NETWORK:
+      INFURA_API_KEY:
+    ports:
+      - 3000:3000
+
+  sg-parser-solana-prod:
+    container_name: sg-parser-solana-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - sg-network
+    volumes:
+      - '.:/usr/src/app'
+    environment:
+      NODE_OPTIONS: --max_old_space_size=6144
+      POSTGRES_HOST:
+      POSTGRES_PORT:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DATABASE:
+      POSTGRES_SSL:
+      MODE:
+      CACHE_TTL_LONG_SEC:
+      ENABLE_CRON_JOBS:
+      ENABLE_PARSER_CRON_JOBS:
+      ENABLE_PARSER_SOLANA_CRON_JOBS:
+      DISCORD_CLIENT_ID:
+      DISCORD_CLIENT_SECRET:
+      DISCORD_CALLBACK_URL:
+      TWITTER_CLIENT_ID:
+      TWITTER_CLIENT_SECRET:
+      TWITTER_CALLBACK_URL:
+      EPIC_GAMES_CLIENT_ID:
+      EPIC_GAMES_CLIENT_SECRET:
+      EPIC_GAMES_CALLBACK_URL:
+      TWITTER_BOT_TOKEN:
+      TWITTER_BOT_API_KEY:
+      TWITTER_BOT_API_KEY_SECRET:
+      STEAM_RETURN_URL:
+      STEAM_REALM:
+      STEAM_API_KEY:
+      TELEGRAM_API_ID:
+      TELEGRAM_API_HASH:
+      FORTNITE_API_KEY:
+      NFT_PRIVATE_KEY:
+      NFT_STORE_API_KEY:
+      AIRDROP_MATIC_NETWORK:
+      INFURA_API_KEY:
+    ports:
+      - 3000:3000
+
+  sg-redis:
+    container_name: sg-redis
+    image: redis:6-alpine
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - /data
+    networks:
+      - sg-network
+
+networks:
+  sg-network:
+    external: true
+
+volumes:
+  node_modules:

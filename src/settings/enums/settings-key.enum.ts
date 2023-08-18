@@ -1,0 +1,3 @@
+export enum SettingsKey {
+  REWARDS_LEARN_MORE_LINK = 'REWARDS_LEARN_MORE_LINK',
+}

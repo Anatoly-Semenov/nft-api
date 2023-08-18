@@ -10,11 +10,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: [ 'sg-api' ],
-  /**
-   * Your New Relic license key.
-   */
-  license_key: '7de4c27aef3fce3c239176bf64185805d899NRAL',
+  app_name: [ 'nft-api' ],
   /**
    * This setting controls distributed tracing.
    * Distributed tracing lets you see the path that a request takes through your
